@@ -26,3 +26,12 @@ async function createPost(e) {
         throw new Error(message);
     }
 }
+
+function formatFormData(formData) {
+    let obj = {};
+    for (let key of formData.keys()) {
+        obj[key] = formData.get(key);
+    }
+
+    return obj;
+}
