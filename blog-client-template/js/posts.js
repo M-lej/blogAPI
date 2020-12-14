@@ -1,0 +1,33 @@
+window.onload = function() {
+    fetchAllPosts();
+}
+
+async function fetchAllPosts() {
+
+    try {
+        let response = await fetch('http://localhost:3000/posts');
+        let data = await response.json();
+
+        let postListHTML = '';
+        for (let post of data.reverse()) {
+            postListHTML += `<li class="list-posts>`
+
+            postListHTML += `<h3>${post.title}</h3>`;
+
+            postListHTML += `<p>${post.author}`;
+
+            let postDate = new Date(post.date);
+            postListHTML += ` | ${postDate.getFullYear()}-${postDate.getMonth()}-${postDate.getDate()}</p>`;
+
+            postListHTML += `<p>${post.content}</p>`;
+
+            postListHTML += `</li>`  
+
+        }
+
+        document.getElementById('post-list').innerHTML = postListHTML;
+
+    } catch (message) {
+        throw new Error(message);
+    }
+}
