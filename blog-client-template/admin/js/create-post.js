@@ -35,6 +35,23 @@ async function createPost(e) {
     }
 }
 
+async function prefillForm() {
+    let urlParams = new URLSearchParams(window.location.search);
+    let postId = urlParams.get('id');
+
+    try{
+        let response = await fetch('http://localhost:3000/posts')
+        let data = await response.json();
+
+        document.getElementById('title-textarea').value = data.title;
+        document.getElementById('author-textarea').value = data.author;
+        document.getElementById('content-textarea').value = data.content;
+
+    } catch (message) {
+        throw new Error(message);
+    }
+}
+
 function formatFormData(formData) {
     let obj = {};
     for (let key of formData.keys()) {
