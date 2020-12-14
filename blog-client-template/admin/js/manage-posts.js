@@ -45,7 +45,7 @@ function deleteBtn() {
         console.log(postId);
 
     try {
-        await fetch('http://localhost:3000/posts' + postId, {
+        await fetch('http://localhost:3000/posts/' + postId, {
             method: 'DELETE',
         });
 
