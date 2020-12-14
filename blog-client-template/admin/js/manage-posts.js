@@ -9,7 +9,7 @@ async function fetchAllPosts() {
         let data = await response.json();
         
         let postHTML = '';
-        for (let post of data) {
+        for (let post of data.reverse()) {
             console.log(post); //"post" är alla posts som kommer från URL
 
             postHTML += `<tr>`
