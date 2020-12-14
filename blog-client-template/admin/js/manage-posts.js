@@ -22,17 +22,38 @@ async function fetchAllPosts() {
 
             postHTML += `<td>`;
             postHTML += `<a href="update-post.html?id=${post['_id']}">Update</a> | `;
-            postHTML += `<a href="#" class="delete-pun-btn" data-id="${post['_id']}">Delete</a> `;
+            postHTML += `<a href="#" class="delete-btn" data-id="${post['_id']}">Delete</a> `;
             postHTML += `</td>`;
             
             postHTML += `</tr>`;
         }
 
         document.querySelector('table tbody').innerHTML = postHTML;
-
     } catch (message) {
-        throw new Error(message);
-    }
+        throw new Error(message); }
 
+    deleteBtn();
 }
 
+function deleteBtn() {
+    let delbtn = document.getElementsByClassName('delete-btn');
+    for (let deles of delbtn) {
+        deles.addEventListener('click', async function(e) {
+            e.preventDefault()
+
+        let postId = this.dataset.id
+        console.log(postId);
+
+    try {
+        await fetch('http://localhost:3000/posts' + postId, {
+            method: 'DELETE',
+        });
+
+        this.parentNode.parentNode.remove();
+    }   catch (message) {
+        throw new Error(message);
+    }
+        
+        })
+    }
+}
