@@ -28,17 +28,21 @@ function updatePostEvent() {
         e.preventDefault();
 
         let formData = new FormData(this);
-        let object = {content: formData.get('content')}
+        let object = {
+            title: formData.get('title'),
+            author: formData.get('author'),
+            content: formData.get('content')
+        }
     
         try {
-            await fetch('http://localhost:3000/posts' + urlParams.get('id'), {
+            await fetch('http://localhost:3000/posts/' + urlParams.get('id'), {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(object)
-            });
-    
+                body: JSON.stringify(object) 
+            }); 
+
             window.location.replace('index.html')
         } catch (message) {
             throw new Error(message);
