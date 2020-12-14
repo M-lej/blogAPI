@@ -18,7 +18,7 @@ async function fetchAllPosts() {
             postHTML += `<td>${post.author}</td>`;
 
             let postDate = new Date(post.date);
-            postHTML += `<td>${postDate.getFullYear()}-${postDate.getMonth()}-${postDate.getDate()}</td>`;
+            postHTML += `<td>${postDate.getFullYear()}-${postDate.getMonth()}-${postDate.getDate()} ${postDate.getHours()}:${postDate.getMinutes()}</td>`;
 
             postHTML += `<td>`;
             postHTML += `<a href="update-post.html?id=${post['_id']}">Update</a> | `;
