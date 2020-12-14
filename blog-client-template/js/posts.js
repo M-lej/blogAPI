@@ -12,12 +12,12 @@ async function fetchAllPosts() {
         for (let post of data.reverse()) {
             postListHTML += `<li class="list-posts>`
 
-            postListHTML += `<h3>${post.title}</h3>`;
+            postListHTML += `<h2>${post.title}</h2>`;
 
             postListHTML += `<p>${post.author}`;
 
             let postDate = new Date(post.date);
-            postListHTML += ` | ${postDate.getFullYear()}-${postDate.getMonth()}-${postDate.getDate()}</p>`;
+            postListHTML += ` | ${postDate.getFullYear()}-${postDate.getMonth()}-${postDate.getDate()} ${postDate.getHours()}:${postDate.getMinutes()}</p>`;
 
             postListHTML += `<p>${post.content}</p>`;
 
