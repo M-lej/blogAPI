@@ -10,7 +10,7 @@ h1 {
 }
 
 .adminBtn {
-    background-color: rgb(202, 196, 177);/* Green */
+    background-color: rgb(202, 196, 177);
     color: black;
     padding: 15px 30px;
     text-align: center;
@@ -19,6 +19,10 @@ h1 {
     font-weight: bolder;
 }
 
-.list-post {
+li {
     list-style: none;
+    display: flex;
+    margin-top: 50px;
+    align-items: center;
+    justify-content: center;
 }
