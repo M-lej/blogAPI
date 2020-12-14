@@ -22,7 +22,7 @@ async function fetchAllPosts() {
 
             postHTML += `<td>`;
             postHTML += `<a href="update-post.html?id=${post['_id']}">Update</a> | `;
-            postHTML += `<a href="#" class="delete-pun-btn" data-id="${post['_id']}">Delete</a> `;
+            postHTML += `<a href="#" class="delete-btn" data-id="${post['_id']}">Delete</a> `;
             postHTML += `</td>`;
             
             postHTML += `</tr>`;
@@ -34,6 +34,4 @@ async function fetchAllPosts() {
         throw new Error(message);
     }
 
-    
 }
-
