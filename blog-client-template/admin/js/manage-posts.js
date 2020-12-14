@@ -29,9 +29,32 @@ async function fetchAllPosts() {
         }
 
         document.querySelector('table tbody').innerHTML = postHTML;
-
     } catch (message) {
+        throw new Error(message); }
+
+    deleteBtn();
+}
+
+function deleteBtn() {
+    let delbtn = document.getElementsByClassName('delete-btn');
+    for (let deles of delbtn) {
+        deles.addEventListener('click', async function(e) {
+            e.preventDefault()
+
+        let postId = this.dataset.id
+        console.log(postId);
+
+    try {
+        await fetch('http://localhost:3000/posts' + postId, {
+            method: 'DELETE',
+        });
+
+        this.parentNode.parentNode.remove();
+    }   catch (message) {
         throw new Error(message);
     }
-
+        
+        })
+    }
 }
+
