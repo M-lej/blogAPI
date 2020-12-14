@@ -1,5 +1,7 @@
-let form = document.getElementById('create-container');
+let form = document.getElementById('create-post');
 form.addEventListener('submit', createPost);
+
+
 
 async function createPost(e) {
     e.preventDefault();
@@ -15,9 +17,12 @@ async function createPost(e) {
     console.log(object);
     console.log(JSON.stringify(object));
 
+
+
     try {
         await fetch('http://localhost:3000/posts',  //länk kopplas till databas
             { method: 'POST',
+
             body: JSON.stringify(object) // gör att det sparas
         });
 

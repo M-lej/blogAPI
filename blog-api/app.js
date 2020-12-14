@@ -22,7 +22,7 @@ app.use('/posts', postRouter);
 //Connte to DB
 //mongodb+srv://blog_user:<password>@cluster0.vkqdy.mongodb.net/<dbname>?retryWrites=true&w=majority
 mongoose.connect(
-    'mongodb+srv://blog_user:cvetok17@cluster0.vkqdy.mongodb.net/Cluster0?retryWrites=true&w=majority',
+    'mongodb+srv://blog_user:Apelsin123@cluster0.g69si.mongodb.net/Cluster0?retryWrites=true&w=majority',
     { useNewUrlParser: true, useUnifiedTopology: true },
     () => {
         console.log('DB connected');
