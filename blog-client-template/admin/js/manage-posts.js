@@ -34,5 +34,6 @@ async function fetchAllPosts() {
         throw new Error(message);
     }
 
+    
 }
 
