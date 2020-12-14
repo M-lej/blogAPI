@@ -1,0 +1,24 @@
+body {
+    background-color: rgb(224, 216, 193);
+}
+
+h1 {
+    display: flex;
+    margin-top: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+.adminBtn {
+    background-color: rgb(202, 196, 177);/* Green */
+    color: black;
+    padding: 15px 30px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bolder;
+}
+
+.list-post {
+    list-style: none;
+}
