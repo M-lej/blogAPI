@@ -9,8 +9,9 @@ async function fetchAllPosts() {
         let data = await response.json();
 
         let postListHTML = '';
+        
         for (let post of data.reverse()) {
-            postListHTML += `<li class="list-posts>`
+            postListHTML += `<li class="list-posts">`
 
             postListHTML += `<h2>${post.title}</h2>`;
 
