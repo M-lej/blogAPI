@@ -22,6 +22,8 @@ async function fetchAllPosts() {
 
             postListHTML += `<p class="content">${post.content}</p>`;
 
+            postListHTML += "________________________________________________________________________________________________";
+
             postListHTML += `</li>`; 
             
             console.log(post);

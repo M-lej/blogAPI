@@ -1,0 +1,38 @@
+body {
+    background: linear-gradient(rgb(192, 181, 149), rgb(255, 251, 238));
+}
+
+.adminBtn {
+    background-color: rgb(202, 196, 177);
+    color: black;
+    padding: 15px 30px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bolder;
+}
+
+div {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    
+}
+
+h1 {
+    margin-top: 20px;
+    grid-column: 1/4;
+    justify-self: center;
+}
+
+li {
+    list-style: none;
+    display: grid;
+    margin-top: 50px;
+
+}
+
+.item2 {
+    display: flex;
+    justify-self: center;
+    align-self: center;
+}
