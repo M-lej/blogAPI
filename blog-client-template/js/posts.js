@@ -12,7 +12,7 @@ async function fetchAllPosts() {
         for (let post of data.reverse()) {
             postListHTML += `<li class="list-posts>`
 
-            postListHTML += `<h2>${post.title}</h2>`;
+            postListHTML += `<h3>${post.title}</h3>`;
 
             postListHTML += `<p>${post.author}`;
 
